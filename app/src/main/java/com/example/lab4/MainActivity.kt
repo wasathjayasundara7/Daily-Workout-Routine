@@ -3,14 +3,14 @@ package com.example.lab4
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
-import database.SheduleDatabase
-import repository.SheduleRepository
-import viewModel.SheduleViewModel
-import viewModel.SheduleViewModelFactory
+import com.example.lab4.database.SheDatabase
+import com.example.lab4.repository.SheRepository
+import com.example.lab4.viewModel.SheViewModel
+import com.example.lab4.viewModel.SheViewModelFactory
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var sheduleViewModel: SheduleViewModel
+    lateinit var sheViewModel: SheViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -19,9 +19,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupViewModel(){
-        val sheduleRepository = SheduleRepository(SheduleDatabase(this))
-        val viewModelProviderFactory = SheduleViewModelFactory(application, sheduleRepository)
-        sheduleViewModel = ViewModelProvider(this, viewModelProviderFactory)[SheduleViewModel::class.java]
+        val sheRepository = SheRepository(SheDatabase(this))
+        val viewModelProviderFactory = SheViewModelFactory(application, sheRepository)
+        sheViewModel = ViewModelProvider(this, viewModelProviderFactory)[SheViewModel::class.java]
 
     }
 }

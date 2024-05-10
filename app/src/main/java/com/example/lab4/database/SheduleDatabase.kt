@@ -1,17 +1,17 @@
-package database
+package com.example.lab4.database
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import model.Shedule
+import com.example.lab4.model.She
 
-@Database(entities = [Shedule::class], version = 1)
-abstract class SheduleDatabase: RoomDatabase() {
-    abstract fun getSheduleDao(): SheduleDao
+@Database(entities = [She::class], version = 1)
+abstract class SheDatabase: RoomDatabase() {
+    abstract fun getSheDao(): SheDao
     companion object{
         @Volatile
-        private var instance: SheduleDatabase? = null
+        private var instance: SheDatabase? = null
         private val LOCK = Any()
 
         operator fun invoke(context: Context) = instance ?:
@@ -24,8 +24,8 @@ abstract class SheduleDatabase: RoomDatabase() {
         private fun createDatabase(context: Context) =
             Room.databaseBuilder(
                 context.applicationContext,
-                SheduleDatabase::class.java,
-                "shedule_db"
+                SheDatabase::class.java,
+                "she_db"
             ).build()
     }
 }

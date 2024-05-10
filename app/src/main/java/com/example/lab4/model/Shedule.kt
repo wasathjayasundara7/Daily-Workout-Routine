@@ -1,15 +1,15 @@
-package model
+package com.example.lab4.model
 
 import android.os.Parcelable
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import kotlinx.parcelize.Parcelize
 
-@Entity(tableName = "shedules")
+@Entity(tableName = "shes")
 @Parcelize
-data class Shedule(
+data class She(
     @PrimaryKey(autoGenerate = true)
     val id: Int,
-    val sheduleTitle: String,
-    val sheduleDesc: String
+    val sheTitle: String,
+    val sheDesc: String
 ):Parcelable
