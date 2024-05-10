@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigate"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.lab4.createFragment.HomeFragment"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_addSheFragment"
+            app:destination="@id/addSheFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_editSheFragment"
+            app:destination="@id/editSheFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addSheFragment"
+        android:name="com.example.lab4.createFragment.addSheFragment"
+        android:label="addSheFragment" >
+        <action
+            android:id="@+id/action_addSheFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editSheFragment"
+        android:name="com.example.lab4.createFragment.editSheFragment"
+        android:label="editSheFragment" >
+        <action
+            android:id="@+id/action_editSheFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+
+</navigation>
