@@ -10,6 +10,6 @@ import kotlinx.parcelize.Parcelize
 data class Shedule(
     @PrimaryKey(autoGenerate = true)
     val id: Int,
-    val sheTitle: String,
-    val sheDesc: String
+    val sheduleTitle: String,
+    val sheduleDesc: String
 ):Parcelable

@@ -9,27 +9,33 @@
         android:name="com.example.lab4.createFragment.HomeFragment"
         android:label="HomeFragment" >
         <action
-            android:id="@+id/action_homeFragment_to_addSheFragment"
-            app:destination="@id/addSheFragment" />
+            android:id="@+id/action_homeFragment_to_addSheduleFragment"
+            app:destination="@id/addSheduleFragment" />
         <action
-            android:id="@+id/action_homeFragment_to_editSheFragment"
-            app:destination="@id/editSheFragment" />
+            android:id="@+id/action_homeFragment_to_editSheduleFragment"
+            app:destination="@id/editSheduleFragment" />
     </fragment>
     <fragment
-        android:id="@+id/addSheFragment"
-        android:name="com.example.lab4.createFragment.addSheFragment"
-        android:label="addSheFragment" >
+        android:id="@+id/addSheduleFragment"
+        android:name="com.example.lab4.createFragment.AddSheduleFragment"
+        android:label="AddSheduleFragment" >
         <action
             android:id="@+id/action_addSheFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
     </fragment>
     <fragment
-        android:id="@+id/editSheFragment"
-        android:name="com.example.lab4.createFragment.editSheFragment"
-        android:label="editSheFragment" >
+        android:id="@+id/editSheduleFragment"
+        android:name="com.example.lab4.createFragment.EditSheduleFragment"
+        android:label="EditSheduleFragment" >
         <action
-            android:id="@+id/action_editSheFragment_to_homeFragment"
+            android:id="@+id/action_editSheduleFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
+
+        <argument
+            android:name="shedule"
+            app:argType="model.Shedule"
+            app:nullable="true"/>
+
     </fragment>
 
 </navigation>
