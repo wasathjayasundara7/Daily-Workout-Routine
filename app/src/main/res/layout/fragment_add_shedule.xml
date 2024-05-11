@@ -8,6 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
+        android:background="#041f2c"
         tools:context=".NewNoteFragment"
         android:padding="12dp">
 
@@ -18,8 +19,8 @@
             android:layout_alignParentTop="true"
             android:layout_marginTop="16dp"
             android:fontFamily="@font/poppins"
-            android:text="Add Note."
-            android:textColor="@color/red"
+            android:text="Create A Shedule 💪"
+            android:textColor="#12c3d5"
             android:textSize="24sp"
             android:textStyle="bold" />
 
@@ -27,27 +28,33 @@
             android:id="@+id/addSheTitle"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:hint="Enter the title"
+            android:hint="Enter the workout day"
             android:padding="12dp"
             android:textSize="20sp"
+            android:textColorHint="#abdbe3"
+            android:textColor="#abdbe3"
             android:layout_below="@id/addSheHeading"
-            android:background="@drawable/pink_border"
+            android:background="@drawable/blue_border"
             android:layout_marginTop="16dp"
             android:maxLines="1"
-            android:fontFamily="@font/poppins"/>
+            android:fontFamily="@font/poppins"
+            android:alpha="0.4"/>
 
         <EditText
             android:id="@+id/addSheDesc"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="Enter the description"
+            android:hint="Enter your workout routine here.."
             android:gravity="top"
             android:padding="12dp"
             android:textSize="18sp"
+            android:textColorHint="#abdbe3"
+            android:textColor="#abdbe3"
             android:fontFamily="@font/poppins"
-            android:background="@drawable/pink_border"
+            android:background="@drawable/blue_border"
             android:layout_below="@id/addSheTitle"
-            android:layout_marginTop="12dp" />
+            android:layout_marginTop="12dp"
+            android:alpha="0.4"/>
 
     </RelativeLayout>
 </layout>

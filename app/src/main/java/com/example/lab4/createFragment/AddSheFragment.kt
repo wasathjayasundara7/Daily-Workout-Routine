@@ -80,7 +80,4 @@ class AddSheFragment : Fragment(R.layout.fragment_add_shedule), MenuProvider {
         super.onDestroy()
         addSheBinding = null
     }
-
-
-
 }
