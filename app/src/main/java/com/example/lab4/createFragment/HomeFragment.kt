@@ -81,7 +81,11 @@ class HomeFragment : Fragment(R.layout.fragment_home),SearchView.OnQueryTextList
     }
 
     private fun searchShe(query: String?){
-        val searchQuery = "%$query"
+        val searchQuery = if (query.isNullOrEmpty()) {
+            "%" // Return all results if query is empty or null
+        } else {
+            "%$query%" // Include wildcard character for partial matches
+        }
 
         shesViewModel.searchShe(searchQuery).observe(this) {list ->
             sheAdapter.differ.submitList(list)
