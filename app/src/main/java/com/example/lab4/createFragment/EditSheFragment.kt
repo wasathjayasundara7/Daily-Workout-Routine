@@ -20,27 +20,20 @@ import com.example.lab4.R
 import com.example.lab4.databinding.FragmentEditSheduleBinding
 import com.example.lab4.model.She
 import com.example.lab4.viewModel.SheViewModel
-
 class EditSheFragment : Fragment(R.layout.fragment_edit_shedule), MenuProvider {
 
     private var editSheBinding: FragmentEditSheduleBinding? = null
     private val binding get() = editSheBinding!!
-
     private lateinit var shesViewModel: SheViewModel
     private lateinit var currentShe: She
-
     private val args: EditSheFragmentArgs by navArgs()
-
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         editSheBinding = FragmentEditSheduleBinding.inflate(inflater, container, false)
         return binding.root
     }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -66,7 +59,6 @@ class EditSheFragment : Fragment(R.layout.fragment_edit_shedule), MenuProvider {
             }
         }
     }
-
     private fun deleteShe(){
         AlertDialog.Builder(activity).apply {
             setTitle("Delete Note")
@@ -79,12 +71,10 @@ class EditSheFragment : Fragment(R.layout.fragment_edit_shedule), MenuProvider {
             setNegativeButton("Cancel", null)
         }.create().show()
     }
-
     override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
         menu.clear()
         menuInflater.inflate(R.menu.editshedule, menu)
     }
-
     override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
         return when(menuItem.itemId){
             R.id.deleteShe -> {
@@ -93,9 +83,9 @@ class EditSheFragment : Fragment(R.layout.fragment_edit_shedule), MenuProvider {
             } else -> false
         }
     }
-
     override fun onDestroy() {
         super.onDestroy()
         editSheBinding = null
     }
 }
+

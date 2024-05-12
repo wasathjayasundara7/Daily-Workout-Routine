@@ -20,25 +20,19 @@ import com.example.lab4.adapter.SheAdapter
 import com.example.lab4.databinding.FragmentHomeBinding
 import com.example.lab4.model.She
 import com.example.lab4.viewModel.SheViewModel
-
-
 class HomeFragment : Fragment(R.layout.fragment_home),SearchView.OnQueryTextListener,MenuProvider {
 
     private var homeBinding: FragmentHomeBinding? = null
     private val binding get() = homeBinding!!
-
     private lateinit var shesViewModel: SheViewModel
     private lateinit var sheAdapter: SheAdapter
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         homeBinding = FragmentHomeBinding.inflate(inflater,container,false)
         return binding.root
     }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -63,7 +57,6 @@ class HomeFragment : Fragment(R.layout.fragment_home),SearchView.OnQueryTextList
             }
         }
     }
-
     private fun setupHomeRecyclerView() {
         sheAdapter = SheAdapter()
         binding.homeRecyclerView.apply {
@@ -79,7 +72,6 @@ class HomeFragment : Fragment(R.layout.fragment_home),SearchView.OnQueryTextList
             }
         }
     }
-
     private fun searchShe(query: String?){
         val searchQuery = if (query.isNullOrEmpty()) {
             "%" // Return all results if query is empty or null
@@ -91,23 +83,19 @@ class HomeFragment : Fragment(R.layout.fragment_home),SearchView.OnQueryTextList
             sheAdapter.differ.submitList(list)
         }
     }
-
     override fun onQueryTextSubmit(p0: String?): Boolean {
         return false
     }
-
     override fun onQueryTextChange(newText: String?): Boolean {
         if (newText != null){
             searchShe(newText)
         }
         return true
     }
-
     override fun onDestroy() {
         super.onDestroy()
         homeBinding = null
     }
-
     override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
         menu.clear()
         menuInflater.inflate(R.menu.day, menu)
@@ -116,11 +104,11 @@ class HomeFragment : Fragment(R.layout.fragment_home),SearchView.OnQueryTextList
         menuSearch.isSubmitButtonEnabled = false
         menuSearch.setOnQueryTextListener(this)
     }
-
     override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
         return false
     }
 
 }
+
 
 
